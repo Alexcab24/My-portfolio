@@ -1,0 +1,167 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Experience from "../components/Eduaction.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
+import Books from "../components/icons/Books.astro";
+import Person from "../components/icons/Person.astro";
+import About from "../components/About.astro";
+import Download from "../components/icons/Download.astro";
+
+---
+
+<Layout
+  title="AlexDev - Portafolio"
+  description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido."
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-32">
+      <section class="flex flex-col justify-start items-start">
+        <img class="w-52 h-52 md:w-40 md:h-40 rounded-full bg-[#F5F5F5] mb-10 shadow-xl" src="/AlexCabral.png" alt="alexcab photo" />
+        <div class="text-center lg:text-left lg:mr-10 ">
+            <h2 class="text-primary-text text-4xl md:text-3xl lg:text-5xl sm:text-2xl font-bold flex flex-row gap-x-2 pb-4 lg:pb-6 animate-fade-in-up animate-duration-slower">
+                Hey👋🏻, soy Alex Cabral
+                <a href="https://www.linkedin.com/in/alex-cabral-951887231/" target="_blank" rel="noopener" class="text-blue-500 dark:text-blue-300">
+                    <svg class="w-6 h-6 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </h2>
+            <div class="animate-fade-in-up animate-delay-300 animate-duration-slower">
+              <h2 class="text-sm md:text-lg lg:text-2xl text-balance max-w-[700px] text-black dark:text-white">
+                <span class="text-secondary font-semibold ">Desarrollador Web</span>.
+                <span class="bg-gradient-to-r text-transparent bg-clip-text from-red-500 to-blue-500">De Santo Domingo, República Dominicana </span>🇩🇴.
+            </h2>
+            <Badge class="mt-2">Disponible para trabajar</Badge>
+            </div>
+            
+        </div>
+       
+    </section>
+    
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill class={`
+            bg-secondary
+            rounded-full
+            flex justify-center items-center gap-x-2
+            py-1 px-2 md:py-2 md:px-4
+            text-xs md:text-base
+            text-white
+            transition
+            hover:bg-blue-500 
+            hover:bg-opacity-25 
+            hover:border-blue-500
+            duration-300 
+            ease
+           
+          `}  
+          href="https://www.linkedin.com/in/alex-cabral-951887231/">
+          <LinkedInIcon  class="size-4 md:size-6" />
+           LinkedIn
+        </SocialPill>
+        <SocialPill 
+        class={`
+          bg-secondary
+            rounded-full
+            flex justify-center items-center gap-x-2
+            py-1 px-2 md:py-2 md:px-4
+            text-xs md:text-base
+            text-white
+            transition
+            hover:bg-[#6e5494] 
+            hover:bg-opacity-25 
+            hover:border-[#6e5494] 
+            duration-300 
+            ease
+           
+          `} 
+        href="https://github.com/Alexcab24">
+          <GitHubIcon class="size-4 md:size-6" />
+           GitHub
+        </SocialPill>
+        <SocialPill 
+        class={`
+          bg-secondary
+           rounded-full
+            flex justify-center items-center gap-x-2
+            py-1 px-2 md:py-2 md:px-4
+            text-xs md:text-base
+            text-white 
+            transition
+            hover:bg-[#c71610] 
+            hover:bg-opacity-25 
+            hover:border-[#c71610] 
+            duration-300 
+            ease
+           
+          `} 
+        href="mailto:acabral2442@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
+           acabral2442@gmail.com
+        </SocialPill>
+        <SocialPill 
+        class={`
+          bg-secondary
+            rounded-full
+            flex justify-center items-center gap-x-2
+            py-1 px-2 md:py-2 md:px-4
+            text-xs md:text-base
+            text-white
+            transition
+            hover:bg-blue-500 
+            hover:bg-opacity-25 
+            hover:border-[#6e5494] 
+            duration-300 
+            ease
+           
+          `} 
+        href="https://github.com/Alexcab24">
+          <Download class="size-4 md:size-6" />
+           Descargar CV
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="formacion">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
+        <Books class="size-7" />
+         Formación
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
+        <CodeIcon class="size-7" />
+         Proyectos
+      </h2>
+      <div class='flex flex-col justify-around sm:flex-row'>
+        <Projects />
+      </div>
+      
+    </SectionContainer>
+
+    <SectionContainer id="sobremi">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
+        <Person class="size-7" />
+         Sobre mí
+      </h2>
+
+    <About/>
+      
+    </SectionContainer>
+
+    
+  </main>
+</Layout>

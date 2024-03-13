@@ -1,0 +1,26 @@
+---
+import EduactionItem from "./EduactionItem.astro";
+
+const EXPERIENCIE = [
+  {
+    date: "2020 - Actualidad...",
+    title: "Ingeniería en Sistemas Computacionales.",
+    description: "Universidad Tecnológica de Santiago - UTESA."
+  },
+  {
+    date: "2017 - 2020.",
+    title: "Técnico en desarrollo y administración de aplicaiones informáticas.",
+    description: "Instituto Tecnológico Simón Orozco - ITESO."
+  }
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((education) => (
+      <li class="mb-10 ms-4">
+        <EduactionItem {...education} />
+      </li>
+    ))
+  }
+</ol>
