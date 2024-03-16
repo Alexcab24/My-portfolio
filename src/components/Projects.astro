@@ -3,7 +3,8 @@ import ReactJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Firebase from "./icons/Firebase.astro";
 import SocialPill from "./SocialPill.astro";
-import Download from "./icons/Download.astro";
+import Link from "./icons/Link.astro";
+import GitHub from "./icons/GitHub.astro";
 
 const TAGS = {
   REACT: {
@@ -27,8 +28,8 @@ const PROJECTS = [
     title: "GIFStickerSearching",
     description:
       "Desarrollé una vibrante galería web utilizando React, Tailwind CSS y la API de Giphy para ofrecer a los usuarios una experiencia divertida y visualmente atractiva. La aplicación permite explorar una amplia colección de GIFs y stickers, ofreciendo una interfaz intuitiva para buscar, ver y descargar contenido animado de manera sencilla.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
+    link: "https://gif-stickers-searching.netlify.app//",
+    github: "https://github.com/Alexcab24/GIFStickerSearching",
     image: "/projects/GifSearcher.png",
     tags: [TAGS.REACT, TAGS.TAILWIND],
   },
@@ -36,8 +37,8 @@ const PROJECTS = [
     title: "Tic Tac Tioe - Multiplayer",
     description:
       "Desarrollé un emocionante juego de 'Tic Tac Toe' (Tres en línea) con funcionalidad multijugador en línea. Utilicé React para construir la interfaz de usuario, Firebase para gestionar y almacenar los datos de los jugadores, y Redux Toolkit para mantener un estado global fluido y eficiente.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
+    link: "https://ceromatacero.netlify.app/",
+    github: "https://github.com/Alexcab24/Cero-Mata-Cero-Online",
     image: "/projects/tictactoe.jpg",
     tags: [TAGS.REACT, TAGS.FIREBASE],
   },
@@ -81,9 +82,9 @@ const PROJECTS = [
             ease
            
           `}
-              href="https://github.com/Alexcab24"
+              href={link}
             >
-              <Download class="size-4 md:size-6" />
+              <Link class="size-4 md:size-6" />
               Demo
             </SocialPill>
             <SocialPill
@@ -103,9 +104,9 @@ const PROJECTS = [
             ease
            
           `}
-              href="https://github.com/Alexcab24"
+              href={github}
             >
-              <Download class="size-4 md:size-6" />
+              <GitHub class="size-4 md:size-6" />
               Code
             </SocialPill>
           </div>
