@@ -21,9 +21,9 @@ import Download from "../components/icons/Download.astro";
   description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido."
 >
   <main class="px-4">
-    <SectionContainer class="py-44 pb-32">
+    <SectionContainer class="py-44 pb-32" id="inicio">
       <section class="flex flex-col justify-start items-start">
-        <img class="w-52 h-52 md:w-40 md:h-40 rounded-full bg-[#F5F5F5] mb-10 shadow-xl" src="/AlexCabral.png" alt="alexcab photo" />
+        <img class="animate-blurred-fade-in w-52 h-52 md:w-40 md:h-40 rounded-full bg-[#F5F5F5] mb-10 shadow-xl" src="/AlexCabral.png" alt="alexcab photo" />
         <div class="text-center lg:text-left lg:mr-10 ">
             <h2 class="text-primary-text text-4xl md:text-3xl lg:text-5xl sm:text-2xl font-bold flex flex-row gap-x-2 pb-4 lg:pb-6 animate-fade-in-up animate-duration-slower">
                 Hey👋🏻, soy Alex Cabral
@@ -31,7 +31,7 @@ import Download from "../components/icons/Download.astro";
                     <svg class="w-6 h-6 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
             </h2>
-            <div class="animate-fade-in-up animate-delay-300 animate-duration-slower">
+            <div class="animate-fade-in-up animate-delay-700 animate-duration-slower">
               <h2 class="text-sm md:text-lg lg:text-2xl text-balance max-w-[700px] text-black dark:text-white">
                 <span class="text-secondary font-semibold ">Desarrollador Web</span>.
                 <span class="bg-gradient-to-r text-transparent bg-clip-text from-red-500 to-blue-500">De Santo Domingo, República Dominicana </span>🇩🇴.
@@ -46,6 +46,7 @@ import Download from "../components/icons/Download.astro";
 
       <nav class="flex gap-4 mt-8 flex-wrap">
         <SocialPill class={`
+        animate-blurred-fade-in
             bg-secondary
             rounded-full
             flex justify-center items-center gap-x-2
@@ -66,6 +67,7 @@ import Download from "../components/icons/Download.astro";
         </SocialPill>
         <SocialPill 
         class={`
+        animate-blurred-fade-in
           bg-secondary
             rounded-full
             flex justify-center items-center gap-x-2
@@ -86,6 +88,7 @@ import Download from "../components/icons/Download.astro";
         </SocialPill>
         <SocialPill 
         class={`
+        animate-blurred-fade-in
           bg-secondary
            rounded-full
             flex justify-center items-center gap-x-2
@@ -106,6 +109,7 @@ import Download from "../components/icons/Download.astro";
         </SocialPill>
         <SocialPill 
         class={`
+        animate-blurred-fade-in
           bg-secondary
             rounded-full
             flex justify-center items-center gap-x-2
@@ -129,7 +133,7 @@ import Download from "../components/icons/Download.astro";
 
     <SectionContainer id="formacion">
       <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-primary-text dark:text-white/80"
       >
         <Books class="size-7" />
          Formación
@@ -139,18 +143,18 @@ import Download from "../components/icons/Download.astro";
 
     <SectionContainer id="proyectos">
       <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-primary-text dark:text-white/80"
       >
         <CodeIcon class="size-7" />
          Proyectos
       </h2>
-      <div class='flex flex-col justify-around sm:flex-row'>
+      <div class=''>
         <Projects />
       </div>
       
     </SectionContainer>
 
-    <SectionContainer id="sobremi">
+    <SectionContainer id="sobre-mi">
       <h2
         class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
       >

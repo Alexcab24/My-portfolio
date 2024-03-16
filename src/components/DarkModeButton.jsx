@@ -11,7 +11,7 @@ const DarkModeButton = () => {
     return (
         <div>
             <button
-                className="p-2 flex flex-row items-center border-2 border-gray-300 rounded-lg text-sm font-bold text-primary-text hover:bg-[#F4F6F6] focus:outline-none "
+                className="bg-white p-2 flex flex-row items-center border-2 border-gray-300 rounded-lg text-sm font-bold text-primary-text hover:bg-[#F4F6F6] hover:text-secondary focus:outline-none "
                 onClick={toggleTheme}
             >
                 <span className="text-md">{isDarkMode ? <Dark/> : <Light/>}</span>

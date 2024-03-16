@@ -1,12 +1,14 @@
 ---
-import ReactJS from "./icons/NextJS.astro"
+import ReactJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
-import Firebase from "./icons/Firebase.astro"
+import Firebase from "./icons/Firebase.astro";
+import SocialPill from "./SocialPill.astro";
+import Download from "./icons/Download.astro";
 
 const TAGS = {
   REACT: {
     name: "React",
-    class: "bg-[#1F618D] text-white",
+    class: "bg-[#3498DB] text-white",
     icon: ReactJS,
   },
   FIREBASE: {
@@ -18,8 +20,8 @@ const TAGS = {
     name: "Tailwind",
     class: "bg-[#003159] text-white",
     icon: Tailwind,
-  }
-}
+  },
+};
 const PROJECTS = [
   {
     title: "GIFStickerSearching",
@@ -39,46 +41,83 @@ const PROJECTS = [
     image: "/projects/tictactoe.jpg",
     tags: [TAGS.REACT, TAGS.FIREBASE],
   },
-  
-
-]
+];
 ---
 
-{
-  PROJECTS.map(({ image, title, description, tags }) => (
-
-<article class = 'm-5 '>
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
- 
-    <a href="#">
-        <img loading="lazy" class="rounded-t-lg" src={image} alt="" />
-    </a>
-     <ul class="flex gap-x-2 flex-row ml-5 mt-5">
-        {tags.map((tag) => (
-          <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
+<article class="w-full justify-center">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <section class="flex justify-between items-center gap-6 md:gap-10 mb-4">
+        <div class="text-primary-text md:w-[400px]">
+          <h3 class="text-secondary text-xl font-semibold ">{title}</h3>
+          <ul class="flex flex-row mb-2 gap-x-2">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`my-2 flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                >
+                  <tag.icon class="size-4" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p class="text-sm">{description}</p>
+          <div class="flex gap-5">
+            <SocialPill
+              class={`
+          bg-secondary
+            rounded-lg
+            flex justify-center items-center gap-x-2
+            my-5
+            py-1 px-2 md:py-2 md:px-4
+            text-xs md:text-base
+            text-white
+            transition
+            hover:bg-blue-500 
+            hover:bg-opacity-25 
+            hover:border-[#6e5494] 
+            duration-300 
+            ease
+           
+          `}
+              href="https://github.com/Alexcab24"
             >
-              <tag.icon class="size-4" />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{description}</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
-    </div>
-</div>
- </article>
-
-  ))
-}
+              <Download class="size-4 md:size-6" />
+              Demo
+            </SocialPill>
+            <SocialPill
+              class={`
+          bg-secondary
+            rounded-lg
+            flex justify-center items-center gap-x-2
+            my-5
+            py-1 px-2 md:py-2 md:px-4
+            text-xs md:text-base
+            text-white
+            transition
+            hover:bg-blue-500 
+            hover:bg-opacity-25 
+            hover:border-[#6e5494] 
+            duration-300 
+            ease
+           
+          `}
+              href="https://github.com/Alexcab24"
+            >
+              <Download class="size-4 md:size-6" />
+              Code
+            </SocialPill>
+          </div>
+        </div>
+        <div>
+          <img
+            src={image}
+            alt="project image"
+            class="w-auto h-40 md:h-48 rounded-lg"
+          />
+        </div>
+      </section>
+    ))
+  }
+</article>
