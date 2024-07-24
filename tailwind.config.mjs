@@ -13,7 +13,10 @@ export default {
 				'primary-text': '#666666',
 				'secondary': '#5DADE2',
 				'secondary-hover': '#2E86C1'
-			}
+			},
+	
+				gradient: 'linear-gradient(90deg, #5DADE2, #FFFFFF)',
+			
 		},
 	},
 	plugins: ['flowbite/plugin', animations],

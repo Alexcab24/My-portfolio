@@ -1,7 +1,7 @@
 ---
 import ReactJS from "./icons/NextJS.astro";
+import AstroIcon from "./icons/Astro.astro";
 import Tailwind from "./icons/Tailwind.astro";
-import Firebase from "./icons/Firebase.astro";
 import SocialPill from "./SocialPill.astro";
 import Link from "./icons/Link.astro";
 import GitHub from "./icons/GitHub.astro";
@@ -12,10 +12,10 @@ const TAGS = {
     class: "bg-[#3498DB] text-white",
     icon: ReactJS,
   },
-  FIREBASE: {
-    name: "Firebase",
-    class: "bg-[#9A7D0A] text-white",
-    icon: Firebase,
+  ASTRO: {
+    name: "Astro",
+    class: "bg-black text-white",
+    icon: AstroIcon,
   },
   TAILWIND: {
     name: "Tailwind",
@@ -34,13 +34,22 @@ const PROJECTS = [
     tags: [TAGS.REACT, TAGS.TAILWIND],
   },
   {
-    title: "Tic Tac Tioe - Multiplayer",
+    title: "InfoHeroes-Blog",
     description:
-      "Desarrollé un emocionante juego de 'Tic Tac Toe' (Tres en línea) con funcionalidad multijugador en línea. Utilicé React para construir la interfaz de usuario, Firebase para gestionar y almacenar los datos de los jugadores, y Redux Toolkit para mantener un estado global fluido y eficiente.",
-    link: "https://ceromatacero.netlify.app/",
-    github: "https://github.com/Alexcab24/Cero-Mata-Cero-Online",
-    image: "/projects/tictactoe.jpg",
-    tags: [TAGS.REACT, TAGS.FIREBASE],
+      '"InfoHeroes-Blog" es un proyecto web que presenta información básica sobre superhéroes de Marvel y DC en un diseño inspirado en cómics. Desarrollado con Astro y Tailwind, ofrece perfiles detallados de personajes con una navegación intuitiva. Este proyecto destaca mi habilidad para crear sitios web temáticos de manera efectiva.',
+    link: "https://info-heroes-blog.netlify.app/",
+    github: "https://github.com/Alexcab24/Info-heroes-blog",
+    image: "/projects/Infoheroes.png",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+  },
+  {
+    title: "Proyecto Midas",
+    description:
+      "Desarrollé una página web para Proyecto Midas, una empresa publicitaria, utilizando Astro para la estructura, Tailwind CSS para el diseño y React para funcionalidades interactivas. Implementé un buscador interno usando los hooks useState y useEffect para mejorar la experiencia del usuario al navegar por el contenido.",
+    link: "https://proyectomidas.com/",
+    github: "",
+    image: "/projects/Midas.png",
+    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
   },
 ];
 ---
@@ -48,9 +57,9 @@ const PROJECTS = [
 <article class="w-full justify-center">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <section class="flex justify-between items-center gap-6 md:gap-10 mb-4">
-        <div class="text-primary-text md:w-[400px]">
-          <h3 class="text-secondary text-xl font-semibold ">{title}</h3>
+      <section class="flex flex-col-reverse md:flex-row justify-between items-center gap-6 md:gap-10 mb-4">
+        <div class="text-primary-text dark:text-white md:w-[400px]">
+          <h3 class="text-secondary dark:text-secondary-light text-xl font-semibold ">{title}</h3>
           <ul class="flex flex-row mb-2 gap-x-2">
             {tags.map((tag) => (
               <li>
@@ -63,25 +72,24 @@ const PROJECTS = [
               </li>
             ))}
           </ul>
-          <p class="text-sm">{description}</p>
+          <p class="text-sm dark:text-gray-300">{description}</p>
           <div class="flex gap-5">
             <SocialPill
               class={`
-          bg-secondary
-            rounded-lg
-            flex justify-center items-center gap-x-2
-            my-5
-            py-1 px-2 md:py-2 md:px-4
-            text-xs md:text-base
-            text-white
-            transition
-            hover:bg-blue-500 
-            hover:bg-opacity-25 
-            hover:border-[#6e5494] 
-            duration-300 
-            ease
-           
-          `}
+                bg-secondary dark:bg-secondary-dark
+                rounded-lg
+                flex justify-center items-center gap-x-2
+                my-5
+                py-1 px-2 md:py-2 md:px-4
+                text-xs md:text-base
+                text-white
+                transition
+                hover:bg-blue-500 
+                hover:bg-opacity-25 
+                hover:border-[#6e5494] 
+                duration-300 
+                ease
+              `}
               href={link}
             >
               <Link class="size-4 md:size-6" />
@@ -89,35 +97,35 @@ const PROJECTS = [
             </SocialPill>
             <SocialPill
               class={`
-          bg-secondary
-            rounded-lg
-            flex justify-center items-center gap-x-2
-            my-5
-            py-1 px-2 md:py-2 md:px-4
-            text-xs md:text-base
-            text-white
-            transition
-            hover:bg-blue-500 
-            hover:bg-opacity-25 
-            hover:border-[#6e5494] 
-            duration-300 
-            ease
-           
-          `}
+                bg-secondary dark:bg-secondary-dark
+                rounded-lg
+                flex justify-center items-center gap-x-2
+                my-5
+                py-1 px-2 md:py-2 md:px-4
+                text-xs md:text-base
+                text-white
+                transition
+                hover:bg-blue-500 
+                hover:bg-opacity-25 
+                hover:border-[#6e5494] 
+                duration-300 
+                ease
+              `}
               href={github}
             >
               <GitHub class="size-4 md:size-6" />
-              Code
+              {!github  ? 'Privado' : 'Code'}
             </SocialPill>
           </div>
         </div>
-        <div>
+        <a href={link} target="_blank" class="group relative overflow-hidden rounded-lg border-2 shadow-lg hover:shadow-secondary dark:hover:shadow-white transition-all duration-500">
           <img
             src={image}
             alt="project image"
-            class="w-auto h-40 md:h-48 rounded-lg"
+            class="object-cover object-center w-full h-full transition-transform duration-1000 ease-in-out transform group-hover:scale-110 md:h-56 "
           />
-        </div>
+       
+        </a>
       </section>
     ))
   }

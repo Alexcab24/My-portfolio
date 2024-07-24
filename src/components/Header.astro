@@ -1,6 +1,7 @@
 ---
 import LanguageButton from "./LanguageButton.astro";
 import DarkModeButton from "./DarkModeButton";
+import DarkModeToggle from "./DarkModeToggle.astro";
 
 const navItems = [
   {
@@ -21,76 +22,68 @@ const navItems = [
   {
     title: "Contacto",
     label: "contacto",
-    url: "#contaco",
+    url: "#contacto",
   },
 ];
 ---
 
-<header class="">
-  <nav class="fixed w-full z-[1000] backdrop-blur-[15px] animate-blurred-fade-in">
-    <div
-      class="max-w-screen-xl flex flex-wrap items-center justify-between p-4"
-    >
-    <div class="flex items-center">
-      <a href="#" class="flex items-center">
-          <img src="/AlexDev.svg" class="w-auto h-auto" />
-      </a>
-  </div>
-      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <div class="flex gap-x-5">
-          <DarkModeButton client:load />
-          <LanguageButton />
-        </div>
-        
-        <button
-          data-collapse-toggle="navbar-cta"
-          type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-cta"
-          aria-expanded="false"
-        >
-          <span class="sr-only">Open main menu</span>
-          <svg
-            class="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15"></path>
-          </svg>
-        </button>
+<nav class="fixed w-full z-20 top-0 start-0 backdrop-blur-[15px]">
+  <div
+    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+  >
+    <a href="#" class="flex items-center">
+      <img src="/ac.png" class="w-14" />
+    </a>
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+      <div class="flex gap-4">
+        <DarkModeToggle/>
+        <!-- <DarkModeButton client:load/> -->
+        <LanguageButton />
       </div>
-      <div
-        class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-        id="navbar-cta"
+      <button
+        data-collapse-toggle="navbar-sticky"
+        type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-sticky"
+        aria-expanded="false"
       >
-      <ul
-      class="w-full flex justify-center bg-white md:bg-transparent p-4 md:p-0 mt-4 text-lg font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
-    >
-      <li class="flex flex-col gap-x-5 md:flex-row">
-        {
-          navItems.map((item) => (
-            <a
-              href={item.url}
-              class="block py-2 px-3 text-primary-text rounded hover:text-secondary md:hover:bg-transparent"
-            >
-              {item.title}
-            </a>
-          ))
-        }
-
-      
-      </li>
-    </ul>
-      </div>
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"></path>
+        </svg>
+      </button>
     </div>
-  </nav>
-</header>
-
-
+    <div
+      class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 "
+      id="navbar-sticky"
+    >
+      <ul
+        class=" w-full flex justify-center bg-white dark:bg-gray-800 md:bg-transparent dark:md:bg-transparent p-4 md:p-0 mt-4 text-lg font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+      >
+        <li class="flex flex-col gap-x-5 md:flex-row">
+          {
+            navItems.map((item) => (
+              <a
+                href={item.url}
+                class="block py-2 px-2 text-primary-text dark:text-gray-200 rounded hover:text-secondary dark:hover:text-secondary-light md:hover:bg-transparent"
+              >
+                {item.title}
+              </a>
+            ))
+          }
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

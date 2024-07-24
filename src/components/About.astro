@@ -1,13 +1,97 @@
+---
+import SocialPill from "./SocialPill.astro";
+import Download from "./icons/Download.astro";
+const icons = [
+    {
+        icon: "/icons/javascript.svg",
+        name: "Javascript",
+    },
+    {
+        icon: "/icons/typescript.svg",
+        name: "Typescript",
+    },
+    {
+        icon: "/icons/react.svg",
+        name: "React",
+    },
+    {
+        icon: "/icons/next.svg",
+        name: "NextJS",
+    },
+    {
+        icon: "/icons/tailwindcss.svg",
+        name: "Tailwind CSS",
+    },
+    {
+        icon: "/icons/astro.svg",
+        name: "Astro",
+    },
+    {
+        icon: "/icons/nodejs.svg",
+        name: "Node JS",
+    },
+    {
+        icon: "/icons/mongodb.svg",
+        name: "Mongo DB",
+    },
+    {
+        icon: "/icons/firebase.svg",
+        name: "Firebase",
+    },
+    {
+        icon: "/icons/git.svg",
+        name: "Git",
+    },
+];
+---
 
-<section class = 'flex flex-col justify-center gap-8 sm:flex-row'>
-
-    <section>
-        <img class = 'size-80 rounded-full' src="Alex.jpeg" alt="imagén de perfil">
-    </section>
-
-    <section class = 'w-64' >
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-    </section>
-  
-   
+<section class="grid grid-cols-1 md:grid-cols-2 w-full py-8">
+  <section class="w-full max-w-[385px] px-4 md:px-0 mx-auto my-6">
+    <img
+      class="w-full h-auto object-cover shadow-xl border border-gray-300 dark:border-gray-700 rounded-2xl"
+      src="Alex.jpeg"
+      alt="imagen de perfil"
+    />
 </section>
+  
+    <section class="text-gray-800 dark:text-gray-300 flex flex-col">
+      <p class="text-lg leading-relaxed font-medium text-primary-text dark:text-white">
+        <span class="text-xl font-bold">"</span>Mi pasión por el desarrollo web surge del deseo de aportar algo valioso al mundo a través de mi ingenio. Aunque nunca he trabajado en una empresa, he disfrutado creando proyectos como una aplicación móvil con funcionalidad CRUD y una página web para una empresa publicitaria. Mi arsenal incluye tecnologías como React, Javascript, Typescript, Git, GitHub, Tailwind, CSS, Firebase, entre otras... Me mantengo al tanto de las últimas tendencias siguiendo publicaciones en redes sociales y videos de mis creadores de contenido favoritos. Estoy ansioso por demostrar mis habilidades, aprender y superarme continuamente. Mi filosofía se centra en entender y priorizar las necesidades del usuario para ofrecer soluciones efectivas y personalizadas. <span class="text-xl font-bold">"</span>
+      </p>
+      <div class="flex flex-wrap gap-2 my-4">
+        {
+          icons.map((item) => (
+            <div class="relative group size-11 bg-secondary/30 dark:bg-secondary/40 border border-gray-600/20 dark:border-gray-600/40 hover:bg-secondary/40 dark:hover:bg-secondary/50 shadow-lg hover:shadow-secondary/55 rounded-xl flex justify-center items-center p-2 transition-all duration-250">
+              <img class="size-7" src={item.icon} alt={item.name} />
+              <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-secondary dark:bg-secondary-dark text-white text-sm rounded py-1 px-3 z-10">
+                {item.name}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <SocialPill
+        class={`
+          animate-blurred-fade-in
+          bg-secondary dark:bg-secondary-dark
+          rounded-full
+          flex justify-center items-center gap-x-2
+          py-3 px-2 md:py-2 md:px-4
+          text-base
+          text-white
+          transition
+          hover:bg-blue-500 
+          hover:bg-opacity-25 
+          border-2 border-sky-300
+          hover:border-[#6e5494] 
+          duration-300 
+          ease
+        `}
+        href="https://github.com/Alexcab24"
+      >
+        <Download class="size-5 md:size-6" />
+        Descargar CV
+      </SocialPill>
+    </section>
+  </section>
+  
