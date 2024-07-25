@@ -1,0 +1,62 @@
+---
+import Dark from "./icons/Dark.astro";
+import Light from './icons/Light.astro'
+---
+
+<div>
+    <button
+        id="theme-toggle"
+        class="bg-gray-100 p-2 flex flex-row items-center justify-center border-2 border-gray-300 rounded-lg text-sm font-bold text-primary-text hover:bg-[#F4F6F6] hover:text-secondary focus:outline-none dark:bg-[#212121] dark:border-gray-600 dark:hover:bg-gray-700 dark:text-gray-400"
+    >
+        <i  id="icon-sun" class="w-6 h-6 hidden">
+            <Dark />
+          
+        </i>
+        <i id="icon-moon" class="w-6 h-6">
+            <Light />
+        </i>
+    </button>
+</div>
+
+<script is:inline>
+const toggleButton = document.getElementById("theme-toggle");
+const body = document.body;
+const iconSun = document.getElementById("icon-sun");
+const iconMoon = document.getElementById("icon-moon");
+
+// Function to update icons based on theme
+const updateIcons = (isDarkMode) => {
+    if (isDarkMode) {
+        iconMoon.classList.add("hidden");
+        iconSun.classList.remove("hidden");
+    } else {
+        iconSun.classList.add("hidden");
+        iconMoon.classList.remove("hidden");
+    }
+   
+};
+
+// Function to set theme
+const setTheme = (isDarkMode) => {
+    if (isDarkMode) {
+        body.classList.add("dark");
+    } else {
+        body.classList.remove("dark");
+    }
+    updateIcons(isDarkMode);
+    localStorage.setItem("darkMode", isDarkMode);
+};
+
+// Event listener for toggle button
+toggleButton.addEventListener("click", () => {
+    const isDarkMode = !body.classList.contains("dark");
+    setTheme(isDarkMode);
+});
+
+// Initial theme setup based on localStorage
+const savedTheme = localStorage.getItem("darkMode") === "true";
+setTheme(savedTheme);
+
+// Initial icon rendering
+
+</script>

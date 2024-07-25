@@ -1,0 +1,96 @@
+---
+import SocialPill from "./SocialPill.astro";
+import Download from "./icons/Download.astro";
+const icons = [
+    {
+        icon: "/icons/javascript.svg",
+        name: "Javascript",
+    },
+    {
+        icon: "/icons/typescript.svg",
+        name: "Typescript",
+    },
+    {
+        icon: "/icons/react.svg",
+        name: "React",
+    },
+    {
+        icon: "/icons/next.svg",
+        name: "NextJS",
+    },
+    {
+        icon: "/icons/tailwindcss.svg",
+        name: "Tailwind CSS",
+    },
+    {
+        icon: "/icons/astro.svg",
+        name: "Astro",
+    },
+    {
+        icon: "/icons/nodejs.svg",
+        name: "Node JS",
+    },
+    {
+        icon: "/icons/mongodb.svg",
+        name: "Mongo DB",
+    },
+    {
+        icon: "/icons/firebase.svg",
+        name: "Firebase",
+    },
+    {
+        icon: "/icons/git.svg",
+        name: "Git",
+    },
+];
+---
+
+<section class="grid grid-cols-1 md:grid-cols-2 w-full py-8">
+  <section class="w-full max-w-[385px] px-4 md:px-0 mx-auto my-6">
+    <img
+      class="w-full h-auto object-cover shadow-xl border border-gray-300 dark:border-gray-700 rounded-2xl"
+      src="Alex.jpeg"
+      alt="profile picture"
+    />
+  </section>
+  
+  <section class="text-gray-800 dark:text-gray-300 flex flex-col">
+    <p class="text-lg leading-relaxed font-medium text-primary-text dark:text-white">
+      <span class="text-xl font-bold">"</span>My passion for web development stems from the desire to contribute something valuable to the world through my creativity. Although I have never worked for a company, I have enjoyed creating projects such as a mobile application with CRUD functionality and a website for an advertising company. My toolkit includes technologies like React, JavaScript, TypeScript, Git, GitHub, Tailwind, CSS, Firebase, and more. I stay up to date with the latest trends by following social media posts and videos from my favorite content creators. I am eager to showcase my skills, learn, and continuously improve. My philosophy focuses on understanding and prioritizing user needs to deliver effective and personalized solutions. <span class="text-xl font-bold">"</span>
+    </p>
+    <div class="flex flex-wrap gap-2 my-4">
+      {
+        icons.map((item) => (
+          <div class="relative group size-11 bg-secondary/30 dark:bg-secondary/40 border border-gray-600/20 dark:border-gray-600/40 hover:bg-secondary/40 dark:hover:bg-secondary/50 shadow-lg hover:shadow-secondary/55 rounded-xl flex justify-center items-center p-2 transition-all duration-250">
+            <img class="size-7" src={item.icon} alt={item.name} />
+            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-secondary dark:bg-secondary-dark text-white text-sm rounded py-1 px-3 z-10">
+              {item.name}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <SocialPill
+      class={`
+        animate-blurred-fade-in
+        bg-secondary dark:bg-secondary-dark
+        rounded-full
+        flex justify-center items-center gap-x-2
+        py-3 px-2 md:py-2 md:px-4
+        text-base
+        text-white
+        transition
+        hover:bg-blue-500 
+        hover:bg-opacity-25 
+        border-2 border-sky-300
+        hover:border-[#6e5494] 
+        duration-300 
+        ease
+      `}
+      href="https://github.com/Alexcab24"
+    >
+      <Download class="size-5 md:size-6" />
+      Download CV
+    </SocialPill>
+  </section>
+</section>

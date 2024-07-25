@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string
+  description: string
+  date: string
+}
+
+const { title, date, description } = Astro.props
+---
+
+<div
+  class="absolute w-4 h-4 rounded-full mt-1.5 -start-2 border border-secondary bg-secondary"
+>
+</div>
+<time class="mb-1 text-sm font-normal leading-none text-primary-text dark:text-sky-200/80">{date}</time
+>
+<h3 class="text-xl font-semibold text-secondary  mt-2">
+  {title}
+</h3>
+<p class="mb-4 text-base font-normal  text-primary-text text-pretty dark:text-white">
+  {description}
+</p>
+
