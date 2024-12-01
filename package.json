@@ -17,6 +17,7 @@
     "@fontsource-variable/montserrat": "^5.0.18",
     "@fontsource-variable/onest": "5.0.2",
     "@fontsource/roboto": "^5.0.12",
+    "@github/typing-effect-element": "^0.1.0",
     "@midudev/tailwind-animations": "^0.0.7",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.22",

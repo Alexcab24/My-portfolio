@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
 import Badge from "../components/Badge.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
@@ -20,14 +21,14 @@ import ContactSec from '../components/ContactSec.astro'
 
 <Layout
   title="AlexDev - Portafolio"
-  description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido."
+  description="Portafolio de Alex Cabral. Desarrollador de aplicaciones y páginas web"
 >
   <main class="px-4">
     <SectionContainer class="py-44 pb-32" id="inicio">
       <section class="flex flex-col justify-center items-center md:justify-start md:items-start">
         <img class="animate-blurred-fade-in w-52 h-52 md:w-40 md:h-40 rounded-full bg-[#F5F5F5] mb-10 shadow-xl" src="/AlexCabral.png" alt="alexcab photo" />
         <div class="text-center lg:text-left lg:mr-10 ">
-          <h2 class="text-primary-text dark:text-white text-4xl md:text-3xl lg:text-5xl sm:text-2xl font-bold flex flex-row gap-x-2 pb-4 lg:pb-6 animate-fade-in-up animate-duration-slower">
+          <h2  class="text-primary-text dark:text-white text-4xl md:text-3xl lg:text-5xl sm:text-2xl font-bold flex flex-row gap-x-2 pb-4 lg:pb-6 animate-fade-in-up animate-duration-slower">
             Hey👋🏻, soy Alex Cabral
           </h2>
           <div class="animate-fade-in-up animate-delay-700 animate-duration-slower">
@@ -104,6 +105,7 @@ import ContactSec from '../components/ContactSec.astro'
           acabral2442@gmail.com
         </SocialPill>
         <SocialPill 
+        download
           class={`
           animate-blurred-fade-in
           bg-secondary dark:bg-secondary-dark
@@ -120,7 +122,8 @@ import ContactSec from '../components/ContactSec.astro'
           duration-300 
           ease
         `} 
-        href="https://github.com/Alexcab24">
+        href="/docs/alex-cabral-cv.pdf">
+    
           <Download class="size-5 md:size-6" />
           Descargar CV
         </SocialPill>
@@ -162,3 +165,4 @@ import ContactSec from '../components/ContactSec.astro'
     </SectionContainer>
   </main>
 </Layout>
+
