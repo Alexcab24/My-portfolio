@@ -1,16 +1,25 @@
 ---
-import ReactJS from "./icons/NextJS.astro";
+import ReactJS from "./icons/React.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import SocialPill from "./SocialPill.astro";
 import Link from "./icons/Link.astro";
 import GitHub from "./icons/GitHub.astro";
+import Nextjs from "./icons/NextJS.astro";
+import Postgre from "./icons/Postgre.astro"
+import Docker from "./icons/Docker.astro"
+import Prisma from "./icons/Prisma.astro"
 
 const TAGS = {
   REACT: {
     name: "React",
     class: "bg-[#3498DB] text-white",
     icon: ReactJS,
+  },
+  NEXTJS: {
+    name: "Nextjs",
+    class: "bg-black text-white",
+    icon: Nextjs,
   },
   ASTRO: {
     name: "Astro",
@@ -22,16 +31,31 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-blue-900 text-white",
+    icon: Postgre
+  },
+  DOCKER: {
+    name: "Docker",
+    class: "bg-sky-900 text-white",
+    icon: Docker
+  },
+  PRISMA: {
+    name: "Prisma",
+    class: "bg-slate-900 text-white",
+    icon: Prisma
+  }
 };
 const PROJECTS = [
-  {
-    title: "GIFStickerSearching",
+{
+    title: "Inventory System",
     description:
-      "Desarrollé una vibrante galería web utilizando React, Tailwind CSS y la API de Giphy para ofrecer a los usuarios una experiencia divertida y visualmente atractiva. La aplicación permite explorar una amplia colección de GIFs y stickers, ofreciendo una interfaz intuitiva para buscar, ver y descargar contenido animado de manera sencilla.",
-    link: "https://gif-stickers-searching.netlify.app//",
+      "Desarrollé un Sistema de Inventario tipo SaaS multitenant que permite a las empresas gestionar sus productos, usuarios y proveedores de manera eficiente. Utilicé Next.js, Tailwind CSS, Prisma y PostgreSQL para crear una aplicación escalable y con un diseño moderno. Implementé filtrado avanzado, historial de movimientos y control de acceso por roles, asegurando una experiencia fluida y optimizada en Vercel.",
+    link: "https://testcompany.inventary-app-test.lat/dashboard",
     github: "https://github.com/Alexcab24/GIFStickerSearching",
-    image: "/projects/GifSearcher.png",
-    tags: [TAGS.REACT, TAGS.TAILWIND],
+    image: "/projects/inventory-system.png",
+    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.POSTGRESQL, TAGS.DOCKER, TAGS.PRISMA],
   },
   {
     title: "InfoHeroes-Blog",
@@ -59,7 +83,9 @@ const PROJECTS = [
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
       <section class="flex flex-col-reverse md:flex-row justify-between items-center gap-6 md:gap-10 mb-4">
         <div class="text-primary-text dark:text-white md:w-[400px]">
-          <h3 class="text-secondary dark:text-secondary-light text-xl font-semibold ">{title}</h3>
+          <h3 class="text-secondary dark:text-secondary-light text-xl font-semibold ">
+            {title}
+          </h3>
           <ul class="flex flex-row mb-2 gap-x-2">
             {tags.map((tag) => (
               <li>
@@ -114,17 +140,20 @@ const PROJECTS = [
               href={github}
             >
               <GitHub class="size-4 md:size-6" />
-              {!github  ? 'Privado' : 'Code'}
+              {!github ? "Privado" : "Code"}
             </SocialPill>
           </div>
         </div>
-        <a href={link} target="_blank" class="group relative overflow-hidden rounded-lg border-2 shadow-lg hover:shadow-secondary dark:hover:shadow-white transition-all duration-500">
+        <a
+          href={link}
+          target="_blank"
+          class="group relative overflow-hidden rounded-lg border-2 shadow-lg hover:shadow-secondary dark:hover:shadow-white transition-all duration-500"
+        >
           <img
             src={image}
             alt="project image"
             class="object-cover object-center w-full h-full transition-transform duration-1000 ease-in-out transform group-hover:scale-110 md:h-56 "
           />
-       
         </a>
       </section>
     ))

@@ -1,16 +1,26 @@
 ---
-import ReactJS from "./icons/NextJS.astro";
+import ReactJS from "./icons/React.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import SocialPill from "./SocialPill.astro";
 import Link from "./icons/Link.astro";
 import GitHub from "./icons/GitHub.astro";
+import Nextjs from "./icons/NextJS.astro";
+import Postgre from "./icons/Postgre.astro"
+import Docker from "./icons/Docker.astro"
+import Prisma from "./icons/Prisma.astro"
+
 
 const TAGS = {
   REACT: {
     name: "React",
     class: "bg-[#3498DB] text-white",
     icon: ReactJS,
+  },
+  NEXTJS: {
+    name: "Nextjs",
+    class: "bg-black text-white",
+    icon: Nextjs,
   },
   ASTRO: {
     name: "Astro",
@@ -22,16 +32,31 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-blue-900 text-white",
+    icon: Postgre
+  },
+  DOCKER: {
+    name: "Docker",
+    class: "bg-sky-900 text-white",
+    icon: Docker
+  },
+  PRISMA: {
+    name: "Prisma",
+    class: "bg-slate-900 text-white",
+    icon: Prisma
+  }
 };
 const PROJECTS = [
   {
-    title: "GIFStickerSearching",
+    title: "Inventory System",
     description:
-      "I developed a vibrant web gallery using React, Tailwind CSS, and the Giphy API to offer users a fun and visually appealing experience. The application allows users to explore a wide collection of GIFs and stickers, providing an intuitive interface to search, view, and download animated content easily.",
-    link: "https://gif-stickers-searching.netlify.app/",
+      "I developed a multitenant SaaS Inventory System that allows businesses to efficiently manage their products, users, and suppliers. I used Next.js, Tailwind CSS, Prisma, and PostgreSQL to create a scalable application with a modern design. I implemented advanced filtering, movement history, and role-based access control, ensuring a smooth and optimized experience on Vercel.",
+      link: "https://testcompany.inventary-app-test.lat/dashboard",
     github: "https://github.com/Alexcab24/GIFStickerSearching",
-    image: "/projects/GifSearcher.png",
-    tags: [TAGS.REACT, TAGS.TAILWIND],
+    image: "/projects/inventory-system.png",
+    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.POSTGRESQL, TAGS.DOCKER, TAGS.PRISMA],
   },
   {
     title: "InfoHeroes-Blog",
