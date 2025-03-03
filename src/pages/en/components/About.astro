@@ -2,67 +2,81 @@
 import SocialPill from "./SocialPill.astro";
 import Download from "./icons/Download.astro";
 const icons = [
-    {
-        icon: "/icons/javascript.svg",
-        name: "Javascript",
-    },
-    {
-        icon: "/icons/typescript.svg",
-        name: "Typescript",
-    },
-    {
-        icon: "/icons/react.svg",
-        name: "React",
-    },
-    {
-        icon: "/icons/next.svg",
-        name: "NextJS",
-    },
-    {
-        icon: "/icons/tailwindcss.svg",
-        name: "Tailwind CSS",
-    },
-    {
-        icon: "/icons/astro.svg",
-        name: "Astro",
-    },
-    {
-        icon: "/icons/nodejs.svg",
-        name: "Node JS",
-    },
-    {
-        icon: "/icons/mongodb.svg",
-        name: "Mongo DB",
-    },
-    {
-        icon: "/icons/firebase.svg",
-        name: "Firebase",
-    },
-    {
-        icon: "/icons/git.svg",
-        name: "Git",
-    },
+  {
+    icon: "/icons/javascript.svg",
+    name: "Javascript",
+  },
+  {
+    icon: "/icons/typescript.svg",
+    name: "Typescript",
+  },
+  {
+    icon: "/icons/react.svg",
+    name: "React",
+  },
+  {
+    icon: "/icons/next.svg",
+    name: "NextJS",
+  },
+  {
+    icon: "/icons/tailwindcss.svg",
+    name: "Tailwind CSS",
+  },
+  {
+    icon: "/icons/astro.svg",
+    name: "Astro",
+  },
+  {
+    icon: "/icons/nodejs.svg",
+    name: "Node JS",
+  },
+  {
+    icon: "/icons/mongodb.svg",
+    name: "Mongo DB",
+  },
+  {
+    icon: "/icons/firebase.svg",
+    name: "Firebase",
+  },
+  {
+    icon: "/icons/git.svg",
+    name: "Git",
+  },
 ];
 ---
 
 <section class="grid grid-cols-1 md:grid-cols-2 w-full py-8">
   <section class="w-full max-w-[385px] px-4 md:px-0 mx-auto my-6">
-    <div class="group relative overflow-hidden rounded-lg border-2 shadow-lg hover:shadow-secondary dark:hover:shadow-white transition-all duration-500">
-      <a href="https://www.linkedin.com/in/alex-cabral-951887231/?locale=en_US" target="_blank">
+    <div
+      class="group relative overflow-hidden rounded-lg border-2 shadow-lg hover:shadow-secondary dark:hover:shadow-white transition-all duration-500"
+    >
+      <a
+        href="https://www.linkedin.com/in/alex-cabral-951887231/?locale=en_US"
+        target="_blank"
+      >
         <img
-        class="object-cover object-center w-full h-full transition-transform duration-1000 ease-in-out transform group-hover:scale-110  "
-        src="/Alex.jpeg"
-        alt="imagen de perfil"
-      />
+          class="object-cover object-center w-full h-full transition-transform duration-1000 ease-in-out transform group-hover:scale-110"
+          src="/Alex.jpeg"
+          alt="imagen de perfil"
+        />
       </a>
     </div>
   </section>
-  
-  <section class="text-gray-800 dark:text-gray-300 flex flex-col">
-    <p class="text-base leading-relaxed font-medium text-primary-text dark:text-white">
-      <span class="text-xl font-bold">"</span>🚀 Full-stack web developer with experience in freelance projects, specializing in Next.js, TypeScript, and MongoDB. With a strong background in application development and management, I have handled projects end-to-end, from planning to deployment, prioritizing efficient and scalable solutions. I am passionate about learning, continuous improvement, and tackling technical challenges that drive my professional growth.
 
-      Always open to new opportunities and connections in the web development world.<span class="text-xl font-bold">"</span>
+  <section class="text-gray-800 dark:text-gray-300 flex flex-col">
+    <p
+      class="text-base leading-relaxed font-medium text-primary-text dark:text-white"
+    >
+      <span class="text-xl font-bold">"</span>🚀 Full-stack web developer with
+      experience in freelance projects, specializing in Next.js, TypeScript, and
+      MongoDB. With a strong background in application development and
+      management, I have handled projects end-to-end, from planning to
+      deployment, prioritizing efficient and scalable solutions. I am passionate
+      about learning, continuous improvement, and tackling technical challenges
+      that drive my professional growth. Always open to new opportunities and
+      connections in the web development world.<span class="text-xl font-bold"
+        >"</span
+      >
     </p>
     <div class="flex flex-wrap gap-2 my-4">
       {
@@ -77,6 +91,7 @@ const icons = [
       }
     </div>
     <SocialPill
+      download
       class={`
         animate-blurred-fade-in
         bg-secondary dark:bg-secondary-dark
@@ -93,7 +108,7 @@ const icons = [
         duration-300 
         ease
       `}
-      href="https://github.com/Alexcab24"
+      href="/docs/en/alex-cabral-cv-english.pdf"
     >
       <Download class="size-5 md:size-6" />
       Download CV
