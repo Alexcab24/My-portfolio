@@ -14,8 +14,7 @@ import Person from "./components/icons/Person.astro";
 import About from "./components/About.astro";
 import Download from "./components/icons/Download.astro";
 import Contact from "./components/icons/Contact.astro";
-import ContactSec from './components/ContactSec.astro'
-
+import ContactSec from "./components/ContactSec.astro";
 ---
 
 <Layout
@@ -24,16 +23,34 @@ import ContactSec from './components/ContactSec.astro'
 >
   <main class="px-4">
     <SectionContainer class="py-44 pb-32" id="home">
-      <section class="flex flex-col justify-center items-center md:justify-start md:items-start">
-        <img class="animate-blurred-fade-in w-52 h-52 md:w-40 md:h-40 rounded-full bg-[#F5F5F5] mb-10 shadow-xl" src="/AlexCabral.png" alt="alexcab photo" />
+      <section
+        class="flex flex-col justify-center items-center md:justify-start md:items-start"
+      >
+        <img
+          class="animate-blurred-fade-in w-52 h-52 md:w-40 md:h-40 rounded-full bg-[#F5F5F5] mb-10 shadow-xl"
+          src="/AlexCabral.png"
+          alt="alexcab photo"
+        />
         <div class="text-center lg:text-left lg:mr-10">
-          <h2 class="text-primary-text dark:text-white text-4xl md:text-3xl lg:text-5xl sm:text-2xl font-bold flex flex-row gap-x-2 pb-4 lg:pb-6 animate-fade-in-up animate-duration-slower">
+          <h2
+            class="text-primary-text dark:text-white text-4xl md:text-3xl lg:text-5xl sm:text-2xl font-bold flex flex-row gap-x-2 pb-4 lg:pb-6 animate-fade-in-up animate-duration-slower"
+          >
             Hey👋🏻, I'm Alex Cabral
           </h2>
-          <div class="animate-fade-in-up animate-delay-700 animate-duration-slower">
-            <h2 class="text-sm md:text-lg lg:text-2xl text-balance max-w-[700px] text-black dark:text-white">
-              <span class="text-secondary dark:text-secondary-light font-semibold">Web Developer</span>.
-              <span class="bg-gradient-to-r text-transparent bg-clip-text from-red-500 to-blue-500">From Santo Domingo, Dominican Republic</span>🇩🇴.
+          <div
+            class="animate-fade-in-up animate-delay-700 animate-duration-slower"
+          >
+            <h2
+              class="text-sm md:text-lg lg:text-2xl text-balance max-w-[700px] text-black dark:text-white"
+            >
+              <span
+                class="text-secondary dark:text-secondary-light font-semibold"
+                >Web Developer</span
+              >.
+              <span
+                class="bg-gradient-to-r text-transparent bg-clip-text from-red-500 to-blue-500"
+                >From Santo Domingo, Dominican Republic</span
+              >🇩🇴.
             </h2>
             <Badge class="mt-2">Available for work</Badge>
           </div>
@@ -41,7 +58,8 @@ import ContactSec from './components/ContactSec.astro'
       </section>
 
       <nav class="flex flex-col md:flex-row mx-8 md:mx-0 gap-4 mt-8 flex-wrap">
-        <SocialPill class={`
+        <SocialPill
+          class={`
           animate-blurred-fade-in
           bg-secondary dark:bg-secondary-dark
           rounded-full
@@ -56,12 +74,13 @@ import ContactSec from './components/ContactSec.astro'
           hover:border-blue-500
           duration-300 
           ease
-        `}  
-        href="https://www.linkedin.com/in/alex-cabral-951887231/?locale=en_US">
+        `}
+          href="https://www.linkedin.com/in/alex-cabral-951887231/?locale=en_US"
+        >
           <LinkedInIcon class="size-5 md:size-6" />
           LinkedIn
         </SocialPill>
-        <SocialPill 
+        <SocialPill
           class={`
           animate-blurred-fade-in
           bg-secondary dark:bg-secondary-dark
@@ -77,12 +96,13 @@ import ContactSec from './components/ContactSec.astro'
           hover:border-[#6e5494] 
           duration-300 
           ease
-        `} 
-        href="https://github.com/Alexcab24">
+        `}
+          href="https://github.com/Alexcab24"
+        >
           <GitHubIcon class="size-5 md:size-6" />
           GitHub
         </SocialPill>
-        <SocialPill 
+        <SocialPill
           class={`
           animate-blurred-fade-in
           bg-secondary dark:bg-secondary-dark
@@ -98,12 +118,14 @@ import ContactSec from './components/ContactSec.astro'
           hover:border-[#c71610] 
           duration-300 
           ease
-        `} 
-        href="mailto:acabral2442@gmail.com">
+        `}
+          href="mailto:acabral2442@gmail.com"
+        >
           <MailIcon class="size-5 md:size-6" />
           acabral2442@gmail.com
         </SocialPill>
-        <SocialPill 
+        <SocialPill
+          download
           class={`
           animate-blurred-fade-in
           bg-secondary dark:bg-secondary-dark
@@ -119,8 +141,9 @@ import ContactSec from './components/ContactSec.astro'
           hover:border-[#6e5494] 
           duration-300 
           ease
-        `} 
-        href="https://github.com/Alexcab24">
+        `}
+          href="/docs/en/alex-cabral-cv-english.pdf"
+        >
           <Download class="size-5 md:size-6" />
           Download CV
         </SocialPill>
@@ -128,7 +151,9 @@ import ContactSec from './components/ContactSec.astro'
     </SectionContainer>
 
     <SectionContainer id="education">
-      <h2 class="text-5xl drop-shadow-lg font-bold mb-6 flex gap-x-3 items-center text-primary-text dark:text-white">
+      <h2
+        class="text-5xl drop-shadow-lg font-bold mb-6 flex gap-x-3 items-center text-primary-text dark:text-white"
+      >
         <Books class="size-12 drop-shadow-lg" />
         Education
       </h2>
@@ -136,7 +161,9 @@ import ContactSec from './components/ContactSec.astro'
     </SectionContainer>
 
     <SectionContainer id="projects">
-      <h2 class="text-5xl font-bold drop-shadow-lg mb-6 flex gap-x-3 items-center text-primary-text dark:text-white">
+      <h2
+        class="text-5xl font-bold drop-shadow-lg mb-6 flex gap-x-3 items-center text-primary-text dark:text-white"
+      >
         <CodeIcon class="size-12 drop-shadow-lg" />
         Projects
       </h2>
@@ -146,7 +173,9 @@ import ContactSec from './components/ContactSec.astro'
     </SectionContainer>
 
     <SectionContainer id="about-me">
-      <h2 class="text-5xl font-bold mb-6 drop-shadow-lg flex gap-x-3 items-center text-primary-text dark:text-white">
+      <h2
+        class="text-5xl font-bold mb-6 drop-shadow-lg flex gap-x-3 items-center text-primary-text dark:text-white"
+      >
         <Person class="size-12 drop-shadow-lg" />
         About Me
       </h2>
@@ -154,8 +183,12 @@ import ContactSec from './components/ContactSec.astro'
     </SectionContainer>
 
     <SectionContainer id="contact">
-      <h2 class="text-5xl font-bold drop-shadow-lg mb-6 flex gap-x-3 items-center text-primary-text dark:text-white">
-        <Contact class="size-12 drop-shadow-lg fill-primary-text dark:fill-white" />
+      <h2
+        class="text-5xl font-bold drop-shadow-lg mb-6 flex gap-x-3 items-center text-primary-text dark:text-white"
+      >
+        <Contact
+          class="size-12 drop-shadow-lg fill-primary-text dark:fill-white"
+        />
         Contact
       </h2>
       <ContactSec />
