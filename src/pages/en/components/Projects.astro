@@ -6,10 +6,9 @@ import SocialPill from "./SocialPill.astro";
 import Link from "./icons/Link.astro";
 import GitHub from "./icons/GitHub.astro";
 import Nextjs from "./icons/NextJS.astro";
-import Postgre from "./icons/Postgre.astro"
-import Docker from "./icons/Docker.astro"
-import Prisma from "./icons/Prisma.astro"
-
+import Postgre from "./icons/Postgre.astro";
+import Docker from "./icons/Docker.astro";
+import Prisma from "./icons/Prisma.astro";
 
 const TAGS = {
   REACT: {
@@ -35,28 +34,37 @@ const TAGS = {
   POSTGRESQL: {
     name: "PostgreSQL",
     class: "bg-blue-900 text-white",
-    icon: Postgre
+    icon: Postgre,
   },
   DOCKER: {
     name: "Docker",
     class: "bg-sky-900 text-white",
-    icon: Docker
+    icon: Docker,
   },
   PRISMA: {
     name: "Prisma",
     class: "bg-slate-900 text-white",
-    icon: Prisma
-  }
+    icon: Prisma,
+  },
 };
 const PROJECTS = [
   {
     title: "Inventory System",
     description:
       "I developed a multitenant SaaS Inventory System that allows businesses to efficiently manage their products, users, and suppliers. I used Next.js, Tailwind CSS, Prisma, and PostgreSQL to create a scalable application with a modern design. I implemented advanced filtering, movement history, and role-based access control, ensuring a smooth and optimized experience on Vercel.",
-      link: "https://testcompany.inventary-app-test.lat/dashboard",
+    credentials: `Login credentials: 
+    Email: user@google.com, 
+    Password: 12345678`,
+    link: "https://testcompany.inventary-app-test.lat/dashboard",
     github: "https://github.com/Alexcab24/GIFStickerSearching",
     image: "/projects/inventory-system.png",
-    tags: [TAGS.NEXTJS, TAGS.TAILWIND, TAGS.POSTGRESQL, TAGS.DOCKER, TAGS.PRISMA],
+    tags: [
+      TAGS.NEXTJS,
+      TAGS.TAILWIND,
+      TAGS.POSTGRESQL,
+      TAGS.DOCKER,
+      TAGS.PRISMA,
+    ],
   },
   {
     title: "InfoHeroes-Blog",
@@ -77,32 +85,40 @@ const PROJECTS = [
     tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWIND],
   },
 ];
-
 ---
+
 <article class="w-full justify-center">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <section class="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-10 mb-4">
-        <div class="text-primary-text dark:text-white md:w-[400px]">
-          <h3 class="text-secondary dark:text-secondary-light text-xl font-semibold ">
-            {title}
-          </h3>
-          <ul class="flex flex-wrap mb-2 gap-x-2">
-            {tags.map((tag) => (
-              <li>
-                <span
-                  class={`my-2 flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
-                >
-                  <tag.icon class="size-4" />
-                  {tag.name}
-                </span>
-              </li>
-            ))}
-          </ul>
-          <p class="text-sm dark:text-gray-300">{description}</p>
-          <div class="flex flex-wrap gap-5">
-            <SocialPill
-              class={`
+    PROJECTS.map(
+      ({ image, title, description, credentials, tags, link, github }) => (
+        <section class="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-10 mb-4">
+          <div class="text-primary-text dark:text-white md:w-[400px]">
+            <h3 class="text-secondary dark:text-secondary-light text-xl font-semibold ">
+              {title}
+            </h3>
+            <ul class="flex flex-wrap mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`my-2 flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p class="text-sm dark:text-gray-300">{description}</p>
+            {credentials && (
+              <div class="mt-2 p-2 bg-secondary/10 dark:bg-secondary/20 rounded-lg border border-secondary/20">
+                <p class="text-sm font-medium text-secondary dark:text-secondary-light">
+                  {credentials}
+                </p>
+              </div>
+            )}
+            <div class="flex flex-wrap gap-5">
+              <SocialPill
+                class={`
                 bg-secondary dark:bg-secondary-dark
                 rounded-lg
                 flex justify-center items-center gap-x-2
@@ -117,13 +133,13 @@ const PROJECTS = [
                 duration-300 
                 ease
               `}
-              href={link}
-            >
-              <Link class="size-4 md:size-6" />
-              Demo
-            </SocialPill>
-            <SocialPill
-              class={`
+                href={link}
+              >
+                <Link class="size-4 md:size-6" />
+                Demo
+              </SocialPill>
+              <SocialPill
+                class={`
                 bg-secondary dark:bg-secondary-dark
                 rounded-lg
                 flex justify-center items-center gap-x-2
@@ -138,25 +154,26 @@ const PROJECTS = [
                 duration-300 
                 ease
               `}
-              href={github}
-            >
-              <GitHub class="size-4 md:size-6" />
-              {!github ? "Privado" : "Code"}
-            </SocialPill>
+                href={github}
+              >
+                <GitHub class="size-4 md:size-6" />
+                {!github ? "Privado" : "Code"}
+              </SocialPill>
+            </div>
           </div>
-        </div>
-        <a
-          href={link}
-          target="_blank"
-          class="group relative overflow-hidden rounded-lg border-2 shadow-lg hover:shadow-secondary dark:hover:shadow-white transition-all duration-500 w-full md:w-auto"
-        >
-          <img
-            src={image}
-            alt="project image"
-            class="object-cover object-center w-full h-full transition-transform duration-1000 ease-in-out transform group-hover:scale-110 md:h-56"
-          />
-        </a>
-      </section>
-    ))
+          <a
+            href={link}
+            target="_blank"
+            class="group relative overflow-hidden rounded-lg border-2 shadow-lg hover:shadow-secondary dark:hover:shadow-white transition-all duration-500 w-full md:w-auto"
+          >
+            <img
+              src={image}
+              alt="project image"
+              class="object-cover object-center w-full h-full transition-transform duration-1000 ease-in-out transform group-hover:scale-110 md:h-56"
+            />
+          </a>
+        </section>
+      ),
+    )
   }
 </article>
