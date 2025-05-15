@@ -7,8 +7,9 @@ import Link from "./icons/Link.astro";
 import GitHub from "./icons/GitHub.astro";
 import Nextjs from "./icons/NextJS.astro";
 import Postgre from "./icons/Postgre.astro";
-import Docker from "./icons/Docker.astro";
-import Prisma from "./icons/Prisma.astro";
+import Docker from "../../../components/icons/Docker.astro";
+import Prisma from "../../../components/icons/Prisma.astro";
+import CSS from "../../../components/icons/CSS.astro";
 
 const TAGS = {
   REACT: {
@@ -46,6 +47,11 @@ const TAGS = {
     class: "bg-slate-900 text-white",
     icon: Prisma,
   },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#264de4] text-white",
+    icon: CSS,
+  },
 };
 const PROJECTS = [
   {
@@ -67,13 +73,13 @@ const PROJECTS = [
     ],
   },
   {
-    title: "InfoHeroes-Blog",
+    title: "Rick and Morty Web",
     description:
-      '"InfoHeroes-Blog" is a web project that presents basic information about Marvel and DC superheroes in a comic-inspired design. Developed with Astro and Tailwind, it offers detailed character profiles with intuitive navigation. This project showcases my ability to effectively create themed websites.',
-    link: "https://info-heroes-blog.netlify.app/",
-    github: "https://github.com/Alexcab24/Info-heroes-blog",
-    image: "/projects/Infoheroes.png",
-    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+      "A dynamic web application built with React and GraphQL that showcases characters and episodes from the Rick and Morty universe. Features include episode browsing, character details, and a modern, responsive design. The project demonstrates my ability to work with GraphQL APIs and create engaging user interfaces.",
+    link: "https://rick-and-morty-demo-web.netlify.app",
+    github: "https://github.com/Alexcab24/web-rick-and-morty",
+    image: "/projects/rick-morty-web.png",
+    tags: [TAGS.REACT, TAGS.CSS],
   },
   {
     title: "Proyecto Midas",

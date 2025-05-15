@@ -9,6 +9,7 @@ import Nextjs from "./icons/NextJS.astro";
 import Postgre from "./icons/Postgre.astro";
 import Docker from "./icons/Docker.astro";
 import Prisma from "./icons/Prisma.astro";
+import CSS from "./icons/CSS.astro";
 
 const TAGS = {
   REACT: {
@@ -46,7 +47,13 @@ const TAGS = {
     class: "bg-slate-900 text-white",
     icon: Prisma,
   },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#264de4] text-white",
+    icon: CSS,
+  },
 };
+
 const PROJECTS = [
   {
     title: "Inventory System",
@@ -68,13 +75,13 @@ const PROJECTS = [
     ],
   },
   {
-    title: "InfoHeroes-Blog",
+    title: "Rick and Morty Web",
     description:
-      '"InfoHeroes-Blog" es un proyecto web que presenta información básica sobre superhéroes de Marvel y DC en un diseño inspirado en cómics. Desarrollado con Astro y Tailwind, ofrece perfiles detallados de personajes con una navegación intuitiva. Este proyecto destaca mi habilidad para crear sitios web temáticos de manera efectiva.',
-    link: "https://info-heroes-blog.netlify.app/",
-    github: "https://github.com/Alexcab24/Info-heroes-blog",
-    image: "/projects/Infoheroes.png",
-    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+      "Una aplicación web dinámica construida con React y GraphQL que muestra personajes y episodios del universo de Rick and Morty. Incluye funciones como navegación de episodios, detalles de personajes y un diseño moderno y responsivo. El proyecto demuestra mi capacidad para trabajar con APIs GraphQL y crear interfaces de usuario atractivas.",
+    link: "https://rick-and-morty-demo-web.netlify.app",
+    github: "https://github.com/Alexcab24/web-rick-and-morty",
+    image: "/projects/rick-morty-web.png",
+    tags: [TAGS.REACT, TAGS.CSS],
   },
   {
     title: "Proyecto Midas",
