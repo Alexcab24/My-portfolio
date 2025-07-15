@@ -10,6 +10,7 @@ import Postgre from "./icons/Postgre.astro";
 import Docker from "../../../components/icons/Docker.astro";
 import Prisma from "../../../components/icons/Prisma.astro";
 import CSS from "../../../components/icons/CSS.astro";
+import TypeScript from "../../../components/icons/TypeScript.astro";
 
 const TAGS = {
   REACT: {
@@ -52,6 +53,11 @@ const TAGS = {
     class: "bg-[#264de4] text-white",
     icon: CSS,
   },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-[#3178C6] text-white",
+    icon: TypeScript,
+  },
 };
 const PROJECTS = [
   {
@@ -70,16 +76,17 @@ const PROJECTS = [
       TAGS.POSTGRESQL,
       TAGS.DOCKER,
       TAGS.PRISMA,
+      TAGS.TYPESCRIPT,
     ],
   },
   {
-    title: "Rick and Morty Web",
+    title: "Roulette View",
     description:
-      "A dynamic web application built with React and GraphQL that showcases characters and episodes from the Rick and Morty universe. Features include episode browsing, character details, and a modern, responsive design. The project demonstrates my ability to work with GraphQL APIs and create engaging user interfaces.",
-    link: "https://rick-and-morty-demo-web.netlify.app",
-    github: "https://github.com/Alexcab24/web-rick-and-morty",
-    image: "/projects/rick-morty-web.png",
-    tags: [TAGS.REACT, TAGS.CSS],
+      "Roulette View is a web platform for analyzing online roulette results, developed with React and TypeScript. I participated in the complete front-end development, implementing authentication, session management, real-time data visualization with interactive charts, and a scalable architecture. I used technologies such as Apollo Client, Zustand, and TailwindCSS to ensure a modern, efficient, and responsive interface. I also designed and developed the subscriptions section, facilitating the selection of plans and payment methods with seamless integration with the backend.",
+    link: "https://roulettesview.com/",
+    github: "",
+    image: "/projects/rouletteView.png",
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
   {
     title: "Proyecto Midas",

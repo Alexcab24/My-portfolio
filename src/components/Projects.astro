@@ -10,6 +10,7 @@ import Postgre from "./icons/Postgre.astro";
 import Docker from "./icons/Docker.astro";
 import Prisma from "./icons/Prisma.astro";
 import CSS from "./icons/CSS.astro";
+import TypeScript from "./icons/TypeScript.astro";
 
 const TAGS = {
   REACT: {
@@ -52,6 +53,11 @@ const TAGS = {
     class: "bg-[#264de4] text-white",
     icon: CSS,
   },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-[#3178C6] text-white",
+    icon: TypeScript,
+  },
 };
 
 const PROJECTS = [
@@ -72,16 +78,17 @@ const PROJECTS = [
       TAGS.POSTGRESQL,
       TAGS.DOCKER,
       TAGS.PRISMA,
+      TAGS.TYPESCRIPT,
     ],
   },
   {
-    title: "Rick and Morty Web",
+    title: "Roulette View",
     description:
-      "Una aplicación web dinámica construida con React y GraphQL que muestra personajes y episodios del universo de Rick and Morty. Incluye funciones como navegación de episodios, detalles de personajes y un diseño moderno y responsivo. El proyecto demuestra mi capacidad para trabajar con APIs GraphQL y crear interfaces de usuario atractivas.",
-    link: "https://rick-and-morty-demo-web.netlify.app",
-    github: "https://github.com/Alexcab24/web-rick-and-morty",
-    image: "/projects/rick-morty-web.png",
-    tags: [TAGS.REACT, TAGS.CSS],
+      "Roulette View es una plataforma web para el análisis de resultados de ruletas online, desarrollada con React y TypeScript. Participé en el desarrollo completo del frontend, implementando autenticación, gestión de sesiones, visualización de datos en tiempo real con gráficos interactivos y una arquitectura escalable. Utilicé tecnologías como Apollo Client, Zustand y TailwindCSS para asegurar una interfaz moderna, eficiente y responsiva. También diseñé y desarrollé la sección de suscripciones, facilitando la selección de planes y métodos de pago con una integración fluida con el backend.",
+    link: "https://roulettesview.com/",
+    github: "",
+    image: "/projects/rouletteView.png",
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
   {
     title: "Proyecto Midas",
