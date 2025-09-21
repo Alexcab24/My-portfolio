@@ -2,85 +2,130 @@
 import SocialPill from "./SocialPill.astro";
 import Download from "./icons/Download.astro";
 const icons = [
-    {
-        icon: "/icons/javascript.svg",
-        name: "Javascript",
-    },
-    {
-        icon: "/icons/typescript.svg",
-        name: "Typescript",
-    },
-    {
-        icon: "/icons/react.svg",
-        name: "React",
-    },
-    {
-        icon: "/icons/next.svg",
-        name: "NextJS",
-    },
-    {
-        icon: "/icons/tailwindcss.svg",
-        name: "Tailwind CSS",
-    },
-    {
-        icon: "/icons/astro.svg",
-        name: "Astro",
-    },
-    {
-        icon: "/icons/nodejs.svg",
-        name: "Node JS",
-    },
-    {
-        icon: "/icons/mongodb.svg",
-        name: "Mongo DB",
-    },
-    {
-        icon: "/icons/firebase.svg",
-        name: "Firebase",
-    },
-    {
-        icon: "/icons/git.svg",
-        name: "Git",
-    },
+  // Frontend
+  {
+    icon: "/icons/javascript.svg",
+    name: "Javascript",
+  },
+  {
+    icon: "/icons/typescript.svg",
+    name: "Typescript",
+  },
+  {
+    icon: "/icons/react.svg",
+    name: "React",
+  },
+  {
+    icon: "/icons/next.svg",
+    name: "NextJS",
+  },
+  {
+    icon: "/icons/tailwindcss.svg",
+    name: "Tailwind CSS",
+  },
+  {
+    icon: "/icons/astro.svg",
+    name: "Astro",
+  },
+  // Backend
+  {
+    icon: "/icons/nodejs.svg",
+    name: "Node JS",
+  },
+  {
+    icon: "/icons/expressjs.svg",
+    name: "Express",
+  },
+  {
+    icon: "/icons/csharp.svg",
+    name: "C#",
+  },
+  {
+    icon: "/icons/dotnet.svg",
+    name: ".NET",
+  },
+  // Databases
+  {
+    icon: "/icons/mongodb.svg",
+    name: "Mongo DB",
+  },
+  {
+    icon: "/icons/postgresql.svg",
+    name: "PostgreSQL",
+  },
+  {
+    icon: "/icons/firebase.svg",
+    name: "Firebase",
+  },
+  // DevOps & Cloud
+  {
+    icon: "/icons/docker.svg",
+    name: "Docker",
+  },
+  {
+    icon: "/icons/aws.svg",
+    name: "AWS",
+  },
+  // Tools
+  {
+    icon: "/icons/git.svg",
+    name: "Git",
+  },
+  {
+    icon: "/icons/postman.svg",
+    name: "Postman",
+  },
 ];
 ---
 
 <section class="grid grid-cols-1 md:grid-cols-2 w-full py-8">
   <section class="w-full max-w-[385px] px-4 md:px-0 mx-auto my-6">
-    <div class="group relative overflow-hidden rounded-lg border-2 shadow-lg hover:shadow-secondary dark:hover:shadow-white transition-all duration-500">
-      <a href="https://www.linkedin.com/in/alex-cabral-951887231/" target="_blank">
+    <div
+      class="group relative overflow-hidden rounded-lg border-2 shadow-lg hover:shadow-secondary dark:hover:shadow-white transition-all duration-500"
+    >
+      <a
+        href="https://www.linkedin.com/in/alex-cabral-951887231/"
+        target="_blank"
+      >
         <img
-        class="object-cover object-center w-full h-full transition-transform duration-1000 ease-in-out transform group-hover:scale-110  "
-        src="/Alex.jpeg"
-        alt="imagen de perfil"
-      />
+          class="object-cover object-center w-full h-full transition-transform duration-1000 ease-in-out transform group-hover:scale-110"
+          src="/Alex.jpeg"
+          alt="imagen de perfil"
+        />
       </a>
-   
     </div>
-    
-</section>
-  
-    <section class="text-gray-800 dark:text-gray-300 flex flex-col">
-      <p class="text-base leading-relaxed font-medium text-primary-text dark:text-white">
-        <span class="text-xl font-bold">"</span>🚀Desarrollador web fullstack con experiencia en proyectos freelance, especializado en Next.js, TypeScript y MongoDB. Con una sólida formación en desarrollo y administración de aplicaciones, he gestionado proyectos de manera integral, desde la planificación hasta el despliegue, priorizando soluciones eficientes y escalables. Me apasiona aprender, mejorar continuamente y enfrentar retos técnicos que impulsen mi crecimiento profesional.
+  </section>
 
-        Siempre abierto a nuevas oportunidades y conexiones en el mundo del desarrollo web.<span class="text-xl font-bold">"</span>
-      </p>
-      <div class="flex flex-wrap gap-2 my-4">
-        {
-          icons.map((item) => (
-            <div class="relative group size-11 bg-secondary/30 dark:bg-secondary/40 border border-gray-600/20 dark:border-gray-600/40 hover:bg-secondary/40 dark:hover:bg-secondary/50 shadow-lg hover:shadow-secondary/55 rounded-xl flex justify-center items-center p-2 transition-all duration-250">
-              <img class="size-7" src={item.icon} alt={item.name} />
-              <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-secondary dark:bg-secondary-dark text-white text-sm rounded py-1 px-3 z-10">
-                {item.name}
-              </div>
+  <section class="text-gray-800 dark:text-gray-300 flex flex-col">
+    <p
+      class="text-base leading-relaxed font-medium text-primary-text dark:text-white"
+    >
+      <span class="text-xl font-bold">"</span>🚀Desarrollador web fullstack con
+      experiencia en proyectos freelance, especializado en Next.js, TypeScript y
+      MongoDB. Con una sólida formación en desarrollo y administración de
+      aplicaciones, he gestionado proyectos de manera integral, desde la
+      planificación hasta el despliegue, priorizando soluciones eficientes y
+      escalables. Me apasiona aprender, mejorar continuamente y enfrentar retos
+      técnicos que impulsen mi crecimiento profesional. Siempre abierto a nuevas
+      oportunidades y conexiones en el mundo del desarrollo web.<span
+        class="text-xl font-bold">"</span
+      >
+    </p>
+    <div class="flex flex-wrap gap-2 my-4">
+      {
+        icons.map((item) => (
+          <div class="relative group size-11 bg-secondary/30 dark:bg-secondary/40 border border-gray-600/20 dark:border-gray-600/40 hover:bg-secondary/40 dark:hover:bg-secondary/50 shadow-lg hover:shadow-secondary/55 rounded-xl flex justify-center items-center p-2 transition-all duration-250">
+            <img class="size-7" src={item.icon} alt={item.name} />
+            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-secondary dark:bg-secondary-dark text-white text-sm rounded py-1 px-3 z-10">
+              {item.name}
             </div>
-          ))
-        }
-      </div>
-      <SocialPill
+          </div>
+        ))
+      }
+    </div>
+    <SocialPill
       download
-        class={`
+      class={`
           animate-blurred-fade-in
           bg-secondary dark:bg-secondary-dark
           rounded-full
@@ -96,11 +141,10 @@ const icons = [
           duration-300 
           ease
         `}
-        href="/docs/alex-cabral-cv.pdf"
-      >
-        <Download class="size-5 md:size-6" />
-        Descargar CV
-      </SocialPill>
-    </section>
+      href="/docs/alex-cabral-cv.pdf"
+    >
+      <Download class="size-5 md:size-6" />
+      Descargar CV
+    </SocialPill>
   </section>
-  
+</section>

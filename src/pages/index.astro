@@ -16,11 +16,51 @@ import About from "../components/About.astro";
 import Download from "../components/icons/Download.astro";
 import Contact from "../components/icons/Contact.astro";
 import ContactSec from "../components/ContactSec.astro";
+
+// Structured Data for SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Alex Cabral",
+  jobTitle: "Desarrollador Full Stack",
+  description:
+    "Desarrollador web fullstack con experiencia en proyectos freelance, especializado en Next.js, TypeScript y MongoDB",
+  url: "https://alexcabral.dev",
+  image: "https://alexcabral.dev/Alex.jpeg",
+  sameAs: [
+    "https://www.linkedin.com/in/alex-cabral-951887231/",
+    "https://github.com/Alexcab24",
+  ],
+  knowsAbout: [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "MongoDB",
+    "PostgreSQL",
+    "AWS",
+    "Docker",
+    "C#",
+    ".NET",
+  ],
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Desarrollador de Software",
+    occupationLocation: {
+      "@type": "Country",
+      name: "España",
+    },
+  },
+};
 ---
 
 <Layout
-  title="AlexDev - Portafolio"
-  description="Portafolio de Alex Cabral. Desarrollador de aplicaciones y páginas web"
+  title="Alex Cabral - Desarrollador Full Stack | Portfolio"
+  description="Desarrollador web fullstack con experiencia en React, Next.js, TypeScript, Node.js, MongoDB y más. Especializado en crear aplicaciones web modernas y escalables."
+  keywords="desarrollador full stack, react developer, nextjs, typescript, javascript, nodejs, mongodb, portfolio, alex cabral, desarrollador web"
+  ogImage="/og-image.jpg"
+  structuredData={structuredData}
 >
   <main class="px-4">
     <SectionContainer class="py-44 pb-32" id="inicio">

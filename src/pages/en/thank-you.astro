@@ -2,11 +2,28 @@
 import Layout from "../../layouts/Layout.astro";
 import SectionContainer from "./components/SectionContainer.astro";
 import MailIcon from "./components/icons/Mail.astro";
+
+// Structured Data for SEO
+const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Thank You - Alex Cabral Portfolio",
+    description: "Contact confirmation page - Alex Cabral Full Stack Developer",
+    url: "https://alexcabral.dev/en/thank-you",
+    isPartOf: {
+        "@type": "WebSite",
+        name: "Alex Cabral - Portfolio",
+        url: "https://alexcabral.dev",
+    },
+};
 ---
 
 <Layout
-    title="Thank You - AlexDev Portfolio"
-    description="Thank you for contacting me. I will get back to you soon."
+    title="Thank You for Contacting Me - Alex Cabral | Portfolio"
+    description="Thank you for contacting me. I will get back to you soon. Alex Cabral - Full Stack Developer specialized in React, Next.js and TypeScript."
+    keywords="contact, thank you, alex cabral, developer, portfolio"
+    robots="noindex, follow"
+    structuredData={structuredData}
 >
     <main class="px-4">
         <SectionContainer class="py-44 pb-32">
@@ -16,9 +33,7 @@ import MailIcon from "./components/icons/Mail.astro";
                 <div
                     class="bg-secondary/10 dark:bg-secondary/20 rounded-full p-8 mb-8 shadow-lg hover:shadow-xl transition-all duration-300 animate-blurred-fade-in"
                 >
-                    <MailIcon
-                        class="size-20 text-secondary"
-                    />
+                    <MailIcon class="size-20 text-secondary" />
                 </div>
                 <h1
                     class="text-4xl md:text-5xl font-bold text-primary-text dark:text-white mb-6 animate-fade-in-up animate-delay-200"

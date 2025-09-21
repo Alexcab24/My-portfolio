@@ -15,11 +15,51 @@ import About from "./components/About.astro";
 import Download from "./components/icons/Download.astro";
 import Contact from "./components/icons/Contact.astro";
 import ContactSec from "./components/ContactSec.astro";
+
+// Structured Data for SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Alex Cabral",
+  jobTitle: "Full Stack Developer",
+  description:
+    "Full-stack web developer with experience in freelance projects, specializing in Next.js, TypeScript, and MongoDB",
+  url: "https://alexcabral.dev/en",
+  image: "https://alexcabral.dev/Alex.jpeg",
+  sameAs: [
+    "https://www.linkedin.com/in/alex-cabral-951887231/",
+    "https://github.com/Alexcab24",
+  ],
+  knowsAbout: [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "MongoDB",
+    "PostgreSQL",
+    "AWS",
+    "Docker",
+    "C#",
+    ".NET",
+  ],
+  hasOccupation: {
+    "@type": "Occupation",
+    name: "Software Developer",
+    occupationLocation: {
+      "@type": "Country",
+      name: "Spain",
+    },
+  },
+};
 ---
 
 <Layout
-  title="AlexDev - Portfolio"
-  description="Hire midudev to create your web or mobile application. Web Developer and Content Creator."
+  title="Alex Cabral - Full Stack Developer | Portfolio"
+  description="Full-stack web developer with experience in React, Next.js, TypeScript, Node.js, MongoDB and more. Specialized in creating modern and scalable web applications."
+  keywords="full stack developer, react developer, nextjs, typescript, javascript, nodejs, mongodb, portfolio, alex cabral, web developer"
+  ogImage="/og-image.jpg"
+  structuredData={structuredData}
 >
   <main class="px-4">
     <SectionContainer class="py-44 pb-32" id="home">
