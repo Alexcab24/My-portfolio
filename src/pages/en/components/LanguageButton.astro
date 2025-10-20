@@ -1,16 +1,38 @@
+---
+const currentPath = Astro.url.pathname;
+const isEnglish = currentPath.startsWith("/en");
+---
+
 <div class="flex flex-row justify-center select-none">
     <div class="flex flex-row items-center right-1">
-        <a
-            href="/"
-            class="bg-white dark:bg-gray-800  p-2 flex flex-row items-center border-t-2 border-l-2 border-b-2 border-gray-300 dark:border-gray-600  rounded-l-lg text-sm font-bold text-primary-text hover:bg-[#F4F6F6] dark:hover:bg-gray-600 hover:text-secondary file:placeholder:focus:outline-none "
-        >
-            <span class="text-md">ES</span>
-        </a>
+        {
+            isEnglish ? (
+                <>
+                    <a
+                        href="/"
+                        class="bg-white dark:bg-gray-800 p-2 flex flex-row items-center border-t-2 border-l-2 border-b-2 border-gray-300 dark:border-gray-600 rounded-l-lg text-sm font-bold text-primary-text hover:bg-[#F4F6F6] dark:hover:bg-gray-600 hover:text-secondary focus:outline-none"
+                    >
+                        <span class="text-md">ES</span>
+                    </a>
 
-        <div
-            class="bg-gray-200 dark:bg-gray-700 p-2 flex flex-row items-center border-t-2 border-r-2 border-b-2 border-gray-300 dark:border-gray-600  rounded-r-lg text-sm font-bold text-secondary focus:outline-none "
-        >
-            <span class="text-md">EN</span>
-        </div>
+                    <div class="bg-gray-200 dark:bg-gray-700 p-2 flex flex-row items-center border-t-2 border-r-2 border-b-2 border-gray-300 dark:border-gray-600 rounded-r-lg text-sm font-bold text-secondary focus:outline-none">
+                        <span class="text-md">EN</span>
+                    </div>
+                </>
+            ) : (
+                <>
+                    <div class="bg-gray-200 dark:bg-gray-800 p-2 flex flex-row items-center border-t-2 border-l-2 border-b-2 border-gray-300 dark:border-gray-600 rounded-l-lg text-sm font-bold text-secondary dark:text-secondary focus:outline-none">
+                        <span class="text-md">ES</span>
+                    </div>
+
+                    <a
+                        href="/en"
+                        class="bg-white dark:bg-gray-700 p-2 flex flex-row items-center border-t-2 border-r-2 border-b-2 border-gray-300 dark:border-gray-600 rounded-r-lg text-sm font-bold text-primary-text dark:text-primary-text hover:bg-[#F4F6F6] dark:hover:bg-gray-600 hover:text-secondary dark:hover:text-secondary focus:outline-none"
+                    >
+                        <span class="text-md">EN</span>
+                    </a>
+                </>
+            )
+        }
     </div>
 </div>
